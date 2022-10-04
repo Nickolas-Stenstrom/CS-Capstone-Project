@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
-    bool canMove = true;
+    public bool canMove = true;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    // Runs on a fixed timer, regardless of framerate. Sets the movement speed and checks to see if movement is valid.
     private void FixedUpdate() {
         if (Input.GetKey(KeyCode.Space)) {
             moveSpeed = runSpeed;
@@ -67,6 +68,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Checks to see if movement is valid using Cast() on the player. Returns true if movement is valid and false if it isn't.
     private bool TryMove(Vector2 direction) {
         if(direction != Vector2.zero) {
             // Check for potential collisions
@@ -89,8 +91,18 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    // Gets the player's movement.
     void OnMove(InputValue movementValue) {
         movementInput = movementValue.Get<Vector2>();
+    }
+
+    // Sets the canMove parameter to lock or unlock player movement.
+    public void SetCanMove(bool value) {
+        if (value) {
+            canMove = true;
+        } else {
+            canMove = false;
+        }
     }
 
 }
