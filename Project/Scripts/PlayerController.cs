@@ -6,12 +6,15 @@ using UnityEngine.InputSystem;
 // Takes and handles input and movement for a player character
 public class PlayerController : MonoBehaviour
 {
-    private readonly float walkSpeed = 1f;
-    private readonly float runSpeed = 1.4f;
-    private readonly float sneakSpeed = 0.6f;
+    public readonly float walkSpeed = 1f;
+    public readonly float runSpeed = 1.4f;
+    public readonly float sneakSpeed = 0.6f;
 
     public float moveSpeed = 1f;
     public float collisionOffset = 0.05f;
+    
+    public string roomLocation;
+    
     public ContactFilter2D movementFilter;
 
     Vector2 movementInput;
@@ -28,6 +31,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        rb.freezeRotation = true;
     }
 
     // Runs on a fixed timer, regardless of framerate. Sets the movement speed and checks to see if movement is valid.
@@ -41,7 +46,7 @@ public class PlayerController : MonoBehaviour
         }
         
         if(canMove) {
-            // If movement input is not 0, try to move
+            // If movement input is not 0, try to move.
             if(movementInput != Vector2.zero){
                 
                 bool success = TryMove(movementInput);
@@ -53,18 +58,31 @@ public class PlayerController : MonoBehaviour
                 if(!success) {
                     success = TryMove(new Vector2(0, movementInput.y));
                 }
-                
-                animator.SetBool("isMoving", success);
+
+                            // Set animator values.
+
+                if (movementInput.x !=0) {
+                    animator.SetBool("isMovingHorizontal", true);
+                }
+                else if (movementInput.y > 0) {
+                    animator.SetBool("isMovingUp", true);
+                }
+                else if (movementInput.y < 0) {
+                    animator.SetBool("isMovingDown", true);
+                }               
             } else {
-                animator.SetBool("isMoving", false);
+                animator.SetBool("isMovingHorizontal", false);
+                animator.SetBool("isMovingUp", false);
+                animator.SetBool("isMovingDown", false);
             }
 
-            // Set direction of sprite to movement direction
+            // Set direction of sprite to movement direction.
             if(movementInput.x < 0) {
                 spriteRenderer.flipX = true;
             } else if (movementInput.x > 0) {
                 spriteRenderer.flipX = false;
             }
+
         }
     }
 

@@ -31,6 +31,7 @@ public class InteractableDoor : MonoBehaviour
     /*
         Update is called once per frame. Calls TryOpen() if the player is in range, and closes the dialog box
         if the player is trying to close it.
+        If the pause UI is active, then close the dialog box.
     */
 
     void Update()

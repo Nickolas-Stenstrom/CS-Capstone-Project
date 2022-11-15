@@ -9,6 +9,7 @@ public class Player_Hit : MonoBehaviour
     public PlayerController playerController;
     public Inventory_UI inventoryUI;
     public GameOver_UI gameOverUI;
+    public Overlay_UI overlayUI;
 
     public int maxHealth = 3;
     public int health;
@@ -25,6 +26,7 @@ public class Player_Hit : MonoBehaviour
     // Subtracts one from the player's health, calls death animation if health reaches 0 or below.
     public void TakeDamage() {
         health--;
+        overlayUI.UpdateHealthDisplay(health);
         if (health <= 0) {
             playerController.SetCanMove(false);
             animator.SetBool("isDead", true);
@@ -47,11 +49,19 @@ public class Player_Hit : MonoBehaviour
             difference = difference.normalized * thrust;
 
             if (enemyRB.transform.position.y + 0.08f > transform.position.y) {
-                difference = difference * -0.6f;
-            }
+                difference.y *= -1f;
+                difference *= 0.4f;         
+             }
 
             rb.AddForce(difference, ForceMode2D.Impulse);
             StartCoroutine(KnockbackCo());
+        }
+    }
+
+    public void AddHealth() {
+        if (health < maxHealth) {
+            health++;
+            overlayUI.UpdateHealthDisplay(health);
         }
     }
 
@@ -69,14 +79,20 @@ public class Player_Hit : MonoBehaviour
     // Ends the game.
     public void EndGame() {
         UnityEditor.EditorApplication.isPlaying = false;
+        //Application.Quit();
     }
 
-    // Repositions the player from the starting position, sets health to max.
+    // Repositions the player to the starting position, sets health to max health.
     public void RetryGame() {
         animator.SetBool("isDead", false);
         health = maxHealth;
         transform.position = new Vector3(0, 0, 0);
         playerController.SetCanMove(true);
+        overlayUI.ResetHealthDisplay();
+        ToggleUI();
+    }
+
+    public void ToggleUI() {
         gameOverUI.ToggleUI();
     }
 }

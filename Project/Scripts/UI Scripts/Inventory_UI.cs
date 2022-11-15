@@ -14,6 +14,8 @@ public class Inventory_UI : MonoBehaviour
     public List<Slots_UI> slots = new List<Slots_UI>();
     public Animator animator;
 
+    public GameObject pausePanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,7 @@ public class Inventory_UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab)) {
+        if (Input.GetKeyDown(KeyCode.Tab) && !pausePanel.activeSelf) {
             ToggleInventory();
         }
         if (animator.GetBool("isDead") == true) {

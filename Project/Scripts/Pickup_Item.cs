@@ -11,6 +11,7 @@ public class Pickup_Item : MonoBehaviour
     public Player globalPlayer;
     public PlayerController playerController;
     public Dialog_UI dialogUI;
+    public GameObject pauseUI;
 
     private bool inRange;
 
@@ -24,9 +25,10 @@ public class Pickup_Item : MonoBehaviour
         If the player is in range and the E key is pressed while the dialog box isn't active, PickUp() is called.
         If the player is in range and the E key is pressed while the dialog box is active, remove object from
         the field and turn the dialog box off.
+        If the pause UI is active, don't let the player pick up objects.
     */
     private void Update() {
-        if (inRange && Input.GetKeyDown(KeyCode.E) && !dialogUI.dialogPanel.activeSelf) {
+        if (inRange && Input.GetKeyDown(KeyCode.E) && !dialogUI.dialogPanel.activeSelf && !pauseUI.activeSelf) {
             PickUp();
         } else if (inRange && Input.GetKeyDown(KeyCode.E) && dialogUI.dialogPanel.activeSelf) {
             dialogUI.ToggleDialog();

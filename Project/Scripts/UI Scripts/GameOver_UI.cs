@@ -12,8 +12,10 @@ public class GameOver_UI : MonoBehaviour
     // Turns the visibility of the UI on and off.
     public void ToggleUI() {
         if (!gameOverPanel.activeSelf) {
+            Time.timeScale = 0;
             gameOverPanel.SetActive(true);
         } else {
+            Time.timeScale = 1;
             gameOverPanel.SetActive(false);
         }
     }
