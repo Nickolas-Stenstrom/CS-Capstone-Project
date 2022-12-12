@@ -47,6 +47,47 @@ User Manual
   - Inventory:      Objects you pick up will be put in the inventory. You can open and close the inventory using the Tab key. The top row of the 
                     inventory is used for objects that will be lost when used. The the bottom row is used for keys that you find that will always
                     stay in your inventory. If you want to use an inventory object on something, walk up to it and press the E key.
+                    
+          
+List of Features
+
+  - Player Movement: Allows the player to move using the WASD keys and the arrow keys. While moving, the player can hold down the spacebar or the
+                     right Shift key to sprint or sneak. The code for this is in the PlayerController.cs file in the Scripts folder.
+                     
+  - Inventory System: Lets the player store and pickup items. The code for the inventory UI is in the Inventory_UI.cs and Slots_UI.cs files in the UI Scripts
+                      folder inside the Scripts folder, and the Inventory.cs file inside the Scripts folder. The code for pickup items is in Pickup_Item.cs
+                      inside the Scripts folder.
+                      
+  - Player Health and Knockback: When the player takes damage from an enemy, they lose one health point and are knocked back away from the enemy that hit them.
+                                 If the player takes too much damage, a death animation plays and the Game Over screen is shown. The code for this is in 
+                                 Player_Hit.cs in the scripts folder, and in the GameOver_UI.cs file in the UI_Scripts folder.
+                                 
+  - Interactable Objects: Interactable objects are the objects the player can interact with that aren't inventory items. There are three different types of
+                          interactable objects: one that lets the player input a password, one that requires a certain item in the player's inventory to use,
+                          and the last type just displays the same dialog each time it is interacted with. You can find the code for each of the different types
+                          of interactable objects in the Interactable.cs, InteractableNeedsObject.cs, and InteractablePassword.cs files in the Scripts folder.
+                          There were a few variations of these classes I had to make for some specific parts in the game, which are the InteractableDoor.cs and
+                          Candle.cs files in the Scripts folder.
+                          
+  - Puase Menu: The player can press the Esc key or click the pause button to pause the game. In the pause screen, the player also has the options to quit
+                the game or view the controls. The code for this is in the Pause_UI.cs script inside the UI_Scripts folder in the Scripts folder.
+                
+  - Ghost Enemies: Ghost enemies follow the player around the room as long as the ghost and the player is in the same room, and the player will take damage if they
+                   run into them. The code for the ghost UI is in the Ghost.cs file in the EnemyAI folder, which is in the Scripts folder. The file Rooms.cs in the                        Scripts folder is also used for the implementation of the ghosts.
+    
+  - Health Bar and Health Items: The health bar displays how much health the player has left, and health items can be picked up to increase the health by one.
+                                 The code for the health bar is in the Overlay.cs script in the UI Scripts folder inside the Scripts folder, and the code for
+                                 the health items is in the HealthPickup.cs file in the Scripts folder.
+                                 
+  - Spider Enemies: Spiders will drop down and damage the player if the player isn't sneaking when they walk underneath them. The code for this can be found\
+                    in the SpiderAI.cs and SpiderTrigger.cs files in the EnemyAI folder is the Scripts folder. 
+                    
+  - Zombie Enemies: Zombies walk in horizontal or vertical lines, and will turn around if they bump into a wall or the player. The player takes damage if they
+                    bump into them. The code for the zombies is in the Zombie_AI_Vertical.cs and Zombie_AI_Horizontal.cs folder in the EnemyAI folder.
+                    
+  - Player and Enemy Animations: All of the sprites for the player and enemies can be found in the Art folder.
+    
+  
 
 
        
