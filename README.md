@@ -8,7 +8,7 @@ Table Of Contents
 4. List of Features
 
 
-1. Introduction
+Introduction
 
 This is my PC game I made for my computer science capstone course. is heavily inspired by old school games on consoles like the Game Boy in
 both it's graphics and gameplay. In the game, you take control of a girl trapped in a haunted house where you're tasked with finding three keys 
@@ -17,7 +17,7 @@ the code is written in C#. The game works on Windows computers, it most likely r
 on Mac.
 
 
-2. Installation
+Installation
 
 Step 1: You can download the game right from Github by clicking the green button that says "Code," and then clicking "Download Zip." This 
         Will also give you all of the files on Github, which aren't necessary to run the game. You can delete the "Assets" folder if you'd 
@@ -30,7 +30,7 @@ Step 3: Open the "Spooky Retro Adventure" folder. Make sure to keep all of the f
         click "More Options," and then "Run Anyway."
         
         
-3. User Manual
+User Manual
   
   - To learn how to install the game, see the Installation section.
   
