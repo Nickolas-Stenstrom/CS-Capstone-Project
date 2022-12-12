@@ -67,7 +67,8 @@ List of Features
                           and the last type just displays the same dialog each time it is interacted with. You can find the code for each of the different types
                           of interactable objects in the Interactable.cs, InteractableNeedsObject.cs, and InteractablePassword.cs files in the Scripts folder.
                           There were a few variations of these classes I had to make for some specific parts in the game, which are the InteractableDoor.cs and
-                          Candle.cs files in the Scripts folder.
+                          Candle.cs files in the Scripts folder. Interacting with an interactable object also brings up a dialog box. The code for the dialog boxes
+                          is in the 
                           
   - Puase Menu: The player can press the Esc key or click the pause button to pause the game. In the pause screen, the player also has the options to quit
                 the game or view the controls. The code for this is in the Pause_UI.cs script inside the UI_Scripts folder in the Scripts folder.
@@ -85,7 +86,20 @@ List of Features
   - Zombie Enemies: Zombies walk in horizontal or vertical lines, and will turn around if they bump into a wall or the player. The player takes damage if they
                     bump into them. The code for the zombies is in the Zombie_AI_Vertical.cs and Zombie_AI_Horizontal.cs folder in the EnemyAI folder.
                     
-  - Player and Enemy Animations: All of the sprites for the player and enemies can be found in the Art folder.
+  - Player and Enemy Animations: All of the sprites for the player and enemies can be found in the Art folder. The animation files for the player are in 
+                                 Assets/Characters/Player/Animations folder, and the animation files for the enemies can be foud in Assets/Characters/Enemies.
+                                 Each folder in the Enemies folder is designated for each enemy type, and holds the animation files for each enemy.
+                                 
+  - Graphics: The sprites that I used for the rest of the game's visuals are in the Art/Tiles folder.
+
+  - Level 1: The first level of the game tasks the player with figuring out the right position to turn the hands of a clock to. Since I was able to build the 
+             first level just using the scripts and assets I already made, I didn't have to write any new code for it. You can watch a video walkthrough of 
+             the first and second level here: 
+             
+  - Level 2: The second level of the game takes place in the second story of the house, and the player must explore to figure out how to unlock the closet in
+             the dining room. I had to make the file Candle.cs to handle one of the puzzles, which is a slightly modified version of the InteractableNeedsObject.cs
+             file. Candle.cs is in the Scripts folder. The CheckWin.cs file in the Scripts folder makes sure that the player has the final key in their inventory.
+             You can watch a walkthrough of the second level in the video above.
     
   
 
