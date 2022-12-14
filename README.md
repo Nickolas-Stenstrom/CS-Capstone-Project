@@ -14,7 +14,7 @@ This is my PC game I made for my computer science capstone course. is heavily in
 both it's graphics and gameplay. In the game, you take control of a girl trapped in a haunted house where you're tasked with finding three keys 
 to escape! While exploring the house, you'll have to avoid enemies such as spiders, ghosts, and zombies. I built the game using Unity, and all of 
 the code is written in C#. The game works on Windows computers, it most likely runs on Mac OS computers as well but I haven't been able to test it
-on Mac.
+on Mac. If you want to recreate this project or make your own levels, you can download the Assets folder and place it inside an empty Unity project.
 
 
 Installation
@@ -94,12 +94,12 @@ List of Features
 
   - Level 1: The first level of the game tasks the player with figuring out the right position to turn the hands of a clock to. Since I was able to build the 
              first level just using the scripts and assets I already made, I didn't have to write any new code for it. You can watch a video walkthrough of 
-             the first and second level here: 
+             the first (0:00 - 3:12) and second level (3:12 - 7:54) here: https://www.youtube.com/watch?v=5ANi0q_DAkE
              
   - Level 2: The second level of the game takes place in the second story of the house, and the player must explore to figure out how to unlock the closet in
              the dining room. I had to make the file Candle.cs to handle one of the puzzles, which is a slightly modified version of the InteractableNeedsObject.cs
              file. Candle.cs is in the Scripts folder. The CheckWin.cs file in the Scripts folder makes sure that the player has the final key in their inventory.
-             You can watch a walkthrough of the second level in the video above.
+             You can watch a walkthrough of the second level (3:12 - 7:54) by clicking the link above.
     
   
 
