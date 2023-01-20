@@ -10,7 +10,7 @@ Table Of Contents
 
 Introduction
 
-This is my PC game I made for my computer science capstone course. is heavily inspired by old school games on consoles like the Game Boy in
+This is my PC game I made for my computer science capstone course. It is heavily inspired by old school games on consoles like the Game Boy in
 both it's graphics and gameplay. In the game, you take control of a girl trapped in a haunted house where you're tasked with finding three keys 
 to escape! While exploring the house, you'll have to avoid enemies such as spiders, ghosts, and zombies. I built the game using Unity, and all of 
 the code is written in C#. The game works on Windows computers, it most likely runs on Mac OS computers as well but I haven't been able to test it
