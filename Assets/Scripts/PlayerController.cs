@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// Takes and handles input and movement for a player character
+// Takes and handles input and movement for a player character.
+// Some of the code here was written following this Unity tutorial: https://www.youtube.com/watch?v=7iYWpzL9GkM&t=1420s
 public class PlayerController : MonoBehaviour
 {
     public readonly float walkSpeed = 0.6f;
