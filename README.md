@@ -20,7 +20,7 @@ on Mac. If you want to recreate this project or make your own levels, you can do
 Installation
 
 Step 1: You can download the game right from Github by clicking the green button that says "Code," and then clicking "Download Zip." This 
-        Will also give you all of the files on Github, which aren't necessary to run the game. You can delete the "Assets" folder if you'd 
+        will also give you all of the files on Github, which aren't necessary to run the game. You can delete the "Assets" folder if you'd 
         like since it isn't needed to play the game.
         
 Step 2: Extract the folder anywhere on your computer.
@@ -35,7 +35,8 @@ User Manual
   - To learn how to install the game, see the Installation section.
   
   - Player Movement: To move, use the WASD keys or the arrow keys. You can sprint by holding the spacebar while moving, and you can 
-                     sneak by moving and holding the right Shift key.
+                     sneak by moving and holding the right Shift key. Some enemies will act differently depending on your movement speed, 
+                     so feel free to experiment with it!
                      
   - Interacting:    Some objects in the game can be interacted with, such as doors and inventory items. You can press the E key to interact
                     with interactable objects. Some objects react differently if you have certain items in your inventory. If you get stuck 
