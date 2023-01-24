@@ -4,6 +4,7 @@ using UnityEngine;
 
 /*
     Logic for the inventory system. Held as a reference on the player.
+    Some of the code here was written following this Unity tutorial: https://www.youtube.com/watch?v=rOW17tBiCcY
 */
 
 [System.Serializable]
